@@ -1,9 +1,9 @@
 # Qazaq translit
 
 ## Demo
-```
-https://qzq.surge.sh
-```
+
+[Demo page](https://qzq.surge.sh).
+
 
 ## Project setup
 ```
