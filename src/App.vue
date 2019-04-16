@@ -122,6 +122,12 @@ export default {
       flex: 1 0 100%;
       margin-bottom: 20px;
     }
+
+    &:nth-child(3) {
+      @media screen and (max-width: 767px) {
+        margin-top: 65px;
+      }
+    }
   }
 
   &__toggle {
@@ -149,6 +155,10 @@ export default {
     left: 50%;
     top: 30px;
     transform: translate(-50%, 0);
+
+    @media screen and (max-width: 767px) {
+      top: 230px;
+    }
   }
 
   &__label {
