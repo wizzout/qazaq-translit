@@ -3,6 +3,11 @@
   <div class="qq">
     <h2 class="qq__title">Транслитерация с {{labelIn + 'ы'}} на {{labelOut + 'y'}}</h2>
     <div class="qq__grid">
+      
+      <div class="qq__col">
+        <label for="income" class="qq__label">Текст на {{labelIn + 'е'}}</label>
+        <textarea v-model="income" id="income" class="qq__input"></textarea>
+      </div>
       <button
         class="qq__toggle"
         @click="toggleDirection"
@@ -16,14 +21,6 @@
           ></path>
         </svg>
       </button>
-      <div class="qq__col">
-        <label for="income" class="qq__label">Текст на {{labelIn + 'е'}}</label>
-        <textarea v-model="income" id="income" class="qq__input"></textarea>
-      </div>
-      <!-- <div class="qq__col">
-        <label for="income" class="qq__label">Текст на {{labelIn + 'е'}}</label>
-        <editable contenteditable="true" v-model="income" class="qq__input"></editable>
-      </div> -->
       <div class="qq__col">
         <span class="qq__label">Результат</span>
         <div class="qq__text" >{{ income | qazaq(fromCyr)  }}</div>
@@ -135,6 +132,16 @@ export default {
     border-radius: var(--button-size);
     display: inline-block;
     vertical-align: middle;
+    margin: 10px auto;
+    z-index: 2;
+
+    @media screen and (min-width: 768px) {
+      position: absolute;
+      left: 50%;
+      top: 30px;
+      transform: translate(-50%, 0);
+      margin: 0;
+    }
     
 
     cursor: pointer;
@@ -145,10 +152,7 @@ export default {
       height: 1em;
       width: auto;
     }
-    position: absolute;
-    left: 50%;
-    top: 30px;
-    transform: translate(-50%, 0);
+    
   }
 
   &__label {
